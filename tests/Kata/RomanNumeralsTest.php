@@ -63,7 +63,7 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals('VII', $actual);
     }
 
-    public function test7ReturnsStringVIII(): void
+    public function test8ReturnsStringVIII(): void
     {
         $actual = $this->romanNumerals->handle(8);
 
