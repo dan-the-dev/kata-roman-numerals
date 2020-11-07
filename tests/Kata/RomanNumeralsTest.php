@@ -161,4 +161,18 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals('XXI', $actual);
     }
 
+    public function test22ReturnsStringXXII(): void
+    {
+        $actual = $this->romanNumerals->handle(22);
+
+        $this->assertEquals('XXII', $actual);
+    }
+
+    public function test23ReturnsStringXXIII(): void
+    {
+        $actual = $this->romanNumerals->handle(23);
+
+        $this->assertEquals('XXIII', $actual);
+    }
+
 }
