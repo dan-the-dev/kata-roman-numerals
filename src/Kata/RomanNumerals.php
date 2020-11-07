@@ -12,16 +12,18 @@ class RomanNumerals
 
     public function handle(int $number): string
     {
-        if ($number <= 3) {
-            return $this->transformNumber3orLower($number);
-        } else if ($number <= 8) {
-            return $this->transformNumberAround5($number);
-        } else if ($number <= 13) {
-            return $this->transformNumberAround10($number);
-        } else if ($number <= 18) {
-            return $this->transformNumberAround15($number);
+        switch(true){
+            case ($number <= 3):
+                return $this->transformNumber3orLower($number);
+            case ($number <= 8):
+                return $this->transformNumberAround5($number);
+            case ($number <= 13):
+                return $this->transformNumberAround10($number);
+            case ($number <= 18):
+                return $this->transformNumberAround15($number);
+            case ($number <= 23):
+                return $this->transformNumberAround20($number);
         }
-        return $this->transformNumberAround20($number);
     }
 
     /**
