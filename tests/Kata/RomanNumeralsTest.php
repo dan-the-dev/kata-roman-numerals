@@ -175,4 +175,25 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals('XXIII', $actual);
     }
 
+    public function test1000ReturnsStringM(): void
+    {
+        $actual = $this->romanNumerals->handle(1000);
+
+        $this->assertEquals('M', $actual);
+    }
+
+    public function test950ReturnsStringM(): void
+    {
+        $actual = $this->romanNumerals->handle(950);
+
+        $this->assertEquals('CML', $actual);
+    }
+
+    public function test800ReturnsStringM(): void
+    {
+        $actual = $this->romanNumerals->handle(800);
+
+        $this->assertEquals('DCCC', $actual);
+    }
+
 }
