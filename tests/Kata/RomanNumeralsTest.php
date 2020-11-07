@@ -3,13 +3,15 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\Index;
+use Kata\RomanNumerals;
 
-class IndexTest extends TestCase
+class RomanNumeralsTest extends TestCase
 {
+    private $romanNumerals;
+
     protected function setUp(): void
     {
-        $this->index = new Index();
+        $this->romanNumerals = new RomanNumerals();
     }
 
     public function testShallPass(): void
@@ -19,6 +21,6 @@ class IndexTest extends TestCase
 
     public function testHandleReturnTrue(): void
     {
-        $this->assertEquals(true, $this->index->handle());
+        $this->assertEquals(true, $this->romanNumerals->handle());
     }
 }

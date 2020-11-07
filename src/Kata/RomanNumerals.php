@@ -2,7 +2,7 @@
 
 namespace Kata;
 
-class Index
+class RomanNumerals
 {
     public function handle(): bool
     {
