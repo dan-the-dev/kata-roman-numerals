@@ -4,6 +4,20 @@ namespace Kata;
 
 class RomanNumerals
 {
+    private $arabicToRomansBreakpoints = [
+        1000 		=> 	'M',
+        900 		=> 	'CM',
+        500		=>	'D',
+        400		=>	'CD',
+        100		=>	'C',
+        90		=>	'XC',
+        50		=>	'L',
+        40		=>	'XL',
+        10		=>	'X',
+        5		=>	'V',
+        1		=>	'I'
+    ];
+
     public function handle(int $number): string
     {
         if ($number <= 3) {
@@ -15,6 +29,7 @@ class RomanNumerals
         } else if ($number <= 18) {
             return $this->transformNumberAround15($number);
         }
+        return $this->transformNumberAround20($number);
     }
 
     /**
@@ -32,13 +47,8 @@ class RomanNumerals
      */
     public function transformNumberAround5(int $number): string
     {
-        $string = 'V'; // 5
-        $diff = $number - 5;
-        $remains = abs($diff);
-        $remainsToRomans = $this->transformNumber3orLower($remains);
-        $string = ($diff < 0) ? "{$remainsToRomans}{$string}" : "{$string}{$remainsToRomans}";
-
-        return $string;
+        $breakpoint = 5;
+        return $this->transformNumber($breakpoint, $number);
     }
 
     /**
@@ -47,13 +57,8 @@ class RomanNumerals
      */
     public function transformNumberAround10(int $number): string
     {
-        $string = 'X'; // 10
-        $diff = $number - 10;
-        $remains = abs($diff);
-        $remainsToRomans = $this->transformNumber3orLower($remains);
-        $string = ($diff < 0) ? "{$remainsToRomans}{$string}" : "{$string}{$remainsToRomans}";
-
-        return $string;
+        $breakpoint = 10;
+        return $this->transformNumber($breakpoint, $number);
     }
 
     /**
@@ -63,5 +68,29 @@ class RomanNumerals
     public function transformNumberAround15(int $number): string
     {
         return $this->transformNumberAround10(10) . $this->transformNumberAround5($number-10);
+    }
+
+    /**
+     * @param int $breakpoint
+     * @param int $number
+     * @return string
+     */
+    public function transformNumber(int $breakpoint, int $number): string
+    {
+        $string = $this->arabicToRomansBreakpoints[$breakpoint];
+        $diff = $number - $breakpoint;
+        $remains = abs($diff);
+        $remainsToRomans = $this->transformNumber3orLower($remains);
+        $string = ($diff < 0) ? "{$remainsToRomans}{$string}" : "{$string}{$remainsToRomans}";
+        return $string;
+    }
+
+    /**
+     * @param int $number
+     * @return string
+     */
+    public function transformNumberAround20(int $number): string
+    {
+        return $this->transformNumberAround10(10) . $this->transformNumberAround10($number-10);
     }
 }
