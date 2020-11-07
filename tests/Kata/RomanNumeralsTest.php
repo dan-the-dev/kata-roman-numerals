@@ -14,13 +14,25 @@ class RomanNumeralsTest extends TestCase
         $this->romanNumerals = new RomanNumerals();
     }
 
-    public function testShallPass(): void
+    public function test1ReturnsStringI(): void
     {
-        $this->assertEquals(1, 1);
+        $actual = $this->romanNumerals->handle(1);
+
+        $this->assertEquals('I', $actual);
     }
 
-    public function testHandleReturnTrue(): void
+    public function test2ReturnsStringII(): void
     {
-        $this->assertEquals(true, $this->romanNumerals->handle());
+        $actual = $this->romanNumerals->handle(2);
+
+        $this->assertEquals('II', $actual);
     }
+
+    public function test3ReturnsStringIII(): void
+    {
+        $actual = $this->romanNumerals->handle(3);
+
+        $this->assertEquals('III', $actual);
+    }
+
 }
