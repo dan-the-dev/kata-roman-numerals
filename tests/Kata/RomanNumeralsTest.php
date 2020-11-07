@@ -91,4 +91,53 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals('XI', $actual);
     }
 
+    public function test12ReturnsStringXII(): void
+    {
+        $actual = $this->romanNumerals->handle(12);
+
+        $this->assertEquals('XII', $actual);
+    }
+
+    public function test13ReturnsStringXIII(): void
+    {
+        $actual = $this->romanNumerals->handle(13);
+
+        $this->assertEquals('XIII', $actual);
+    }
+
+    public function test14ReturnsStringXIV(): void
+    {
+        $actual = $this->romanNumerals->handle(14);
+
+        $this->assertEquals('XIV', $actual);
+    }
+
+    public function test15ReturnsStringXV(): void
+    {
+        $actual = $this->romanNumerals->handle(15);
+
+        $this->assertEquals('XV', $actual);
+    }
+
+    public function test16ReturnsStringXVI(): void
+    {
+        $actual = $this->romanNumerals->handle(16);
+
+        $this->assertEquals('XVI', $actual);
+    }
+
+    public function test17ReturnsStringXVII(): void
+    {
+        $actual = $this->romanNumerals->handle(17);
+
+        $this->assertEquals('XVII', $actual);
+    }
+
+    public function test18ReturnsStringXVIII(): void
+    {
+        $actual = $this->romanNumerals->handle(18);
+
+        $this->assertEquals('XVIII', $actual);
+    }
+
 }

@@ -10,9 +10,11 @@ class RomanNumerals
             return $this->transformNumber3orLower($number);
         } else if ($number <= 8) {
             return $this->transformNumberAround5($number);
+        } else if ($number <= 13) {
+            return $this->transformNumberAround10($number);
+        } else if ($number <= 18) {
+            return $this->transformNumberAround15($number);
         }
-
-        return $this->transformNumberAround10($number);
     }
 
     /**
@@ -52,5 +54,14 @@ class RomanNumerals
         $string = ($diff < 0) ? "{$remainsToRomans}{$string}" : "{$string}{$remainsToRomans}";
 
         return $string;
+    }
+
+    /**
+     * @param int $number
+     * @return string
+     */
+    public function transformNumberAround15(int $number): string
+    {
+        return $this->transformNumberAround10(10) . $this->transformNumberAround5($number-10);
     }
 }
