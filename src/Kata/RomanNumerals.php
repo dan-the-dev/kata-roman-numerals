@@ -4,8 +4,8 @@ namespace Kata;
 
 class RomanNumerals
 {
-    public function handle(): bool
+    public function handle(int $arabic): string
     {
-        return true;
+        return str_repeat('I', $arabic);
     }
 }
