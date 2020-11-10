@@ -77,4 +77,32 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals('M', $actual);
     }
 
+    public function testArabic600ReturnsRomanDC(): void
+    {
+        $actual = $this->romanNumerals->handle(600);
+
+        $this->assertEquals('DC', $actual);
+    }
+
+    public function testArabic700ReturnsRomanDCC(): void
+    {
+        $actual = $this->romanNumerals->handle(700);
+
+        $this->assertEquals('DCC', $actual);
+    }
+
+    public function testArabic800ReturnsRomanDCCC(): void
+    {
+        $actual = $this->romanNumerals->handle(800);
+
+        $this->assertEquals('DCCC', $actual);
+    }
+
+    public function testArabic846ReturnsRomanDCCCXLVI(): void
+    {
+        $actual = $this->romanNumerals->handle(836);
+
+        $this->assertEquals('DCCCXXXVI', $actual);
+    }
+
 }
