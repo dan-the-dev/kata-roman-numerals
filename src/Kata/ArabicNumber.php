@@ -17,4 +17,8 @@ final class ArabicNumber
         return $this->value;
     }
 
+    public function equalsTo(ArabicNumber $anotherArabicNumber): bool
+    {
+        return $this->value === $anotherArabicNumber->value;
+    }
 }
