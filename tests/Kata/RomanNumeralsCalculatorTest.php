@@ -27,4 +27,11 @@ class RomanNumeralsCalculatorTest extends TestCase
 
         $this->assertEquals(new RomanNumber('II'), $actual);
     }
+
+    public function testNumber3(): void
+    {
+        $actual = $this->romanNumerals->convertFromArabicNumber(new ArabicNumber(3));
+
+        $this->assertEquals(new RomanNumber('III'), $actual);
+    }
 }
