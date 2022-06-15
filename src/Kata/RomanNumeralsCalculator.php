@@ -4,9 +4,9 @@ namespace Kata;
 
 class RomanNumeralsCalculator
 {
-    public function convertFromArabicNumber(int $number): RomanNumber
+    public function convertFromArabicNumber(ArabicNumber $arabicNumber): RomanNumber
     {
-        if ($number === 2){
+        if ($arabicNumber->getValue() === 2){
             return new RomanNumber('II');
         }
         return new RomanNumber('I');

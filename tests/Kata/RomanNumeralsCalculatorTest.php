@@ -16,14 +16,14 @@ class RomanNumeralsCalculatorTest extends TestCase
 
     public function testNumber1(): void
     {
-        $actual = $this->romanNumerals->convertFromArabicNumber(1);
+        $actual = $this->romanNumerals->convertFromArabicNumber(new ArabicNumber(1));
 
         $this->assertEquals(new RomanNumber('I'), $actual);
     }
 
     public function testNumber2(): void
     {
-        $actual = $this->romanNumerals->convertFromArabicNumber(2);
+        $actual = $this->romanNumerals->convertFromArabicNumber(new ArabicNumber(2));
 
         $this->assertEquals(new RomanNumber('II'), $actual);
     }
