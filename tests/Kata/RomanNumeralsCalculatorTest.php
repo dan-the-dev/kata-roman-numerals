@@ -3,34 +3,34 @@
 namespace Kata;
 
 use PHPUnit\Framework\TestCase;
-use Kata\RomanNumeralsCalculator;
+use Kata\RomanNumeralsFactory;
 
 class RomanNumeralsCalculatorTest extends TestCase
 {
-    private RomanNumeralsCalculator $romanNumerals;
+    private RomanNumeralsFactory $romanNumerals;
 
     protected function setUp(): void
     {
-        $this->romanNumerals = new RomanNumeralsCalculator();
+        $this->romanNumerals = new RomanNumeralsFactory();
     }
 
     public function testNumber1(): void
     {
-        $actual = $this->romanNumerals->convertFromArabicNumber(new ArabicNumber(1));
+        $actual = $this->romanNumerals->createFromArabicNumber(new ArabicNumber(1));
 
         $this->assertEquals(new RomanNumber('I'), $actual);
     }
 
     public function testNumber2(): void
     {
-        $actual = $this->romanNumerals->convertFromArabicNumber(new ArabicNumber(2));
+        $actual = $this->romanNumerals->createFromArabicNumber(new ArabicNumber(2));
 
         $this->assertEquals(new RomanNumber('II'), $actual);
     }
 
     public function testNumber3(): void
     {
-        $actual = $this->romanNumerals->convertFromArabicNumber(new ArabicNumber(3));
+        $actual = $this->romanNumerals->createFromArabicNumber(new ArabicNumber(3));
 
         $this->assertEquals(new RomanNumber('III'), $actual);
     }
